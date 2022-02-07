@@ -4,8 +4,8 @@ using System.Text;
 using Server;
 
 namespace Server.Messages {
-    public struct Connect {
-        public const Int32 MESSAGE_ID = (Int32)eMessageType.CONNECT;
+    public struct Disconnect {
+        public const Int32 MESSAGE_ID = (Int32)eMessageType.DISCONNECT;
         public byte[] Serialise() {
             MemoryStream w = new MemoryStream();
             w.Write(BitConverter.GetBytes(MESSAGE_ID), 0, 4);

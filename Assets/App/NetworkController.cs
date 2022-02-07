@@ -24,14 +24,10 @@ public class NetworkController {
     }
 
     public void Send(string message) {
+        Debug.Log("Send Connect");
         //byte[] buff = Encoding.ASCII.GetBytes(message);
-        var msg = new Server.Messages.Connect {
-            Address = IPAddress.Parse("101.190.197.138").GetAddressBytes(),
-            Port = 11000,
-        };
-
+        var msg = new Server.Messages.Connect();
         var buff = msg.Serialise();
-
         connection.SendTo(buff, endpoint);
     }
 
